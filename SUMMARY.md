@@ -2,4 +2,4 @@
 
 - [README](README.md)
 - [React Router Hook](React Router Hook.md)
-- [redux-toolkit](redux-toolkit.md)
+- [Redux Toolkit](redux-toolkit.md)
