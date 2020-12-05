@@ -15,49 +15,48 @@
 
 ###### 1. 設定 data 資料源頭，並==存入全局 State==
 
-```react
+```jsx
 //這是async的用法，要從api抓到資料之後，再存進State
 export const fetchTours = () => async (dispatch) => {
-     try {
-       const response = await fetch("https://course-api.com/react-tours-project");
-       const tours = await response.json();
-       dispatch(tourCreate(tours));
-     } catch (error) {
-       console.log(error);
-     }
-   };
+  try {
+    const response = await fetch("https://course-api.com/jsx-tours-project");
+    const tours = await response.json();
+    dispatch(tourCreate(tours));
+  } catch (error) {
+    console.log(error);
+  }
+};
 ```
 
 ###### 2. 創造 Data Slice
 
-```react
-   import { createSlice } from "@reduxjs/toolkit";
+```jsx
+import { createSlice } from "@reduxjs/toolkit";
 
-   export const toursSlice = createSlice({
-     name: "tours",
-     initialState: {},
-     reducers: {
-         //state是原本的data, action.payload是帶進來的值
-       create: (state, action) => {
-         state.tours = action.payload;
-       },
-       remove: (state, action) => {
-         state.tours = state.tours.filter((tour) => tour.id !== action.payload);
-       },
-     },
-   });
-
+export const toursSlice = createSlice({
+  name: "tours",
+  initialState: {},
+  reducers: {
+    //state是原本的data, action.payload是帶進來的值
+    create: (state, action) => {
+      state.tours = action.payload;
+    },
+    remove: (state, action) => {
+      state.tours = state.tours.filter((tour) => tour.id !== action.payload);
+    },
+  },
+});
 ```
 
 ###### 3. 重新設定 Action 名稱
 
-```react
+```jsx
 export const { remove: tourRemove, create: tourCreate } = toursSlice.actions;
 ```
 
 ###### 4. 創造 Store
 
-```react
+```jsx
 import { configureStore } from "@reduxjs/toolkit";
 import { toursSlice } from "./TourSlice";
 
@@ -66,12 +65,11 @@ const reducer = {
 };
 
 export default configureStore({ reducer });
-
 ```
 
 ###### 5. 設定 Provider 連結 react
 
-```react
+```jsx
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
@@ -91,7 +89,7 @@ ReactDOM.render(
 
 ###### 6. 將全局 State 透過==useSelector==倒入元件的 state
 
-```react
+```jsx
 import { useSelector, useDispatch } from "react-redux";
 import { fetchTours } from "./TourSlice";
 
@@ -108,7 +106,7 @@ function App() {
 
 - 其實如果父子離太遠，也是可以用 useSelector 取得 State
 
-```react
+```jsx
 const Tours = ({ tours }) => {
   return (
     <section>
@@ -130,7 +128,7 @@ const Tours = ({ tours }) => {
 
 - dispatch 其實<span style="color:yellow">就是 setState 全局版</span>
 
-```react
+```jsx
 import { useDispatch } from "react-redux";
 import { tourRemove } from "./TourSlice";
 
