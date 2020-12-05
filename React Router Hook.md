@@ -1,4 +1,4 @@
-# index
+# React Router Hook
 
 \[toc\]
 
@@ -278,8 +278,8 @@ function BlogPost() {
 
 The `useRouteMatch` hook either:
 
-* takes no argument and returns the match object of the current `<Route>`
-* takes a single argument, which is identical to [props argument of matchPath](https://reactrouter.com/web/api/matchPath/props). It can be either a pathname as a string \(like the example above\) or an object with the matching props that `Route` accepts, like this:
+- takes no argument and returns the match object of the current `<Route>`
+- takes a single argument, which is identical to [props argument of matchPath](https://reactrouter.com/web/api/matchPath/props). It can be either a pathname as a string \(like the example above\) or an object with the matching props that `Route` accepts, like this:
 
 ```jsx
 const match = useRouteMatch({
@@ -288,4 +288,3 @@ const match = useRouteMatch({
   sensitive: true,
 });
 ```
-
