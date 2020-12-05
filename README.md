@@ -6,7 +6,7 @@
 
 The `useHistory` hook gives you access to the [`history`](https://reactrouter.com/web/api/history) instance that you may use to navigate.
 
-that you may use to navigate. test
+that you may use to navigate. test test
 
 ```jsx
 import { useHistory } from "react-router-dom";
