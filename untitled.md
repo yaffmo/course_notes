@@ -4,18 +4,13 @@
 
 ## 安裝
 
-`npm install react-router-dom`
+`npm install react-router-dom` hi
 
 ### Example1
 
 ```jsx
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default function App() {
   return (
@@ -76,7 +71,7 @@ import {
   Route,
   Link,
   useRouteMatch,
-  useParams
+  useParams,
 } from "react-router-dom";
 
 export default function App() {
@@ -131,9 +126,7 @@ function Topics() {
           <Link to={`${match.url}/components`}>Components</Link>
         </li>
         <li>
-          <Link to={`${match.url}/props-v-state`}>
-            Props v. State
-          </Link>
+          <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
         </li>
       </ul>
 
@@ -192,11 +185,7 @@ This could be really useful e.g. in a situation where you would like to trigger 
 ```jsx
 import React from "react";
 import ReactDOM from "react-dom";
-import {
-  BrowserRouter as Router,
-  Switch,
-  useLocation
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, useLocation } from "react-router-dom";
 
 function usePageViews() {
   let location = useLocation();
@@ -229,7 +218,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useParams
+  useParams,
 } from "react-router-dom";
 
 function BlogPost() {
@@ -289,14 +278,13 @@ function BlogPost() {
 
 The `useRouteMatch` hook either:
 
-* takes no argument and returns the match object of the current `<Route>`
-* takes a single argument, which is identical to [props argument of matchPath](https://reactrouter.com/web/api/matchPath/props). It can be either a pathname as a string \(like the example above\) or an object with the matching props that `Route` accepts, like this:
+- takes no argument and returns the match object of the current `<Route>`
+- takes a single argument, which is identical to [props argument of matchPath](https://reactrouter.com/web/api/matchPath/props). It can be either a pathname as a string \(like the example above\) or an object with the matching props that `Route` accepts, like this:
 
 ```jsx
 const match = useRouteMatch({
   path: "/BLOG/:slug/",
   strict: true,
-  sensitive: true
+  sensitive: true,
 });
 ```
-
