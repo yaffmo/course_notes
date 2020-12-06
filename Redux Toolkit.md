@@ -13,7 +13,7 @@
 
 #### - 設定流程
 
-###### 1. 設定 data 資料源頭，並==存入全局 State==
+##### 1. 設定 data 資料源頭，並==存入全局 State==
 
 ```jsx
 //這是async的用法，要從api抓到資料之後，再存進State
@@ -28,7 +28,7 @@ export const fetchTours = () => async (dispatch) => {
 };
 ```
 
-###### 2. 創造 Data Slice
+##### 2. 創造 Data Slice
 
 ```jsx
 import { createSlice } from "@reduxjs/toolkit";
@@ -48,7 +48,7 @@ export const toursSlice = createSlice({
 });
 ```
 
-###### 3. 重新設定 Action 名稱
+##### 3. 重新設定 Action 名稱
 
 ```jsx
 export const { remove: tourRemove, create: tourCreate } = toursSlice.actions;
@@ -67,7 +67,7 @@ const reducer = {
 export default configureStore({ reducer });
 ```
 
-###### 5. 設定 Provider 連結 react
+##### 5. 設定 Provider 連結 react
 
 ```jsx
 import React from "react";
@@ -87,7 +87,7 @@ ReactDOM.render(
 );
 ```
 
-###### 6. 將全局 State 透過==useSelector==倒入元件的 state
+##### 6. 將全局 State 透過==useSelector==倒入元件的 state
 
 ```jsx
 import { useSelector, useDispatch } from "react-redux";
@@ -102,7 +102,7 @@ function App() {
   }, [dispatch]);
 ```
 
-###### 7. 透過 prop drilling，將 State 放進子元件
+##### 7. 透過 prop drilling，將 State 放進子元件
 
 - 其實如果父子離太遠，也是可以用 useSelector 取得 State
 
@@ -124,7 +124,7 @@ const Tours = ({ tours }) => {
 };
 ```
 
-###### 8. 使用==useDispatch==，讓子元件調用 Action
+##### 8. 使用==useDispatch==，讓子元件調用 Action
 
 - dispatch 其實<span style="color:yellow">就是 setState 全局版</span>
 

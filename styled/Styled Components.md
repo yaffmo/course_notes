@@ -4,7 +4,7 @@
 
 > npm install --save styled-components
 
-```jsx
+```scss
 const Button = styled.a`
   /* This renders the buttons above... Edit me! */
   display: inline-block;
@@ -45,4 +45,4 @@ render(
 );
 ```
 
--
+

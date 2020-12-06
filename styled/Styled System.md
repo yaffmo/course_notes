@@ -48,7 +48,7 @@
 
 你可能需要寫下面這樣的程式碼，根據不同設備重新再寫一次樣式做修改。
 
-```react
+```SCSS
 const Article = styled.div`
   width: 100%;
   …

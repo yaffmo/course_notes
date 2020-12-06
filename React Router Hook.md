@@ -4,7 +4,7 @@
 
 ## 安裝
 
-`npm install react-router-dom` hi
+`npm install react-router-dom` 
 
 ### Example1
 
