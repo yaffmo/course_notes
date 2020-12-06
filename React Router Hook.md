@@ -1,6 +1,6 @@
 # React Router Hook
 
-\[toc\]
+[toc]
 
 ## 安裝
 
@@ -176,6 +176,39 @@ function HomeButton() {
 }
 ```
 
+### history object
+
+`history` objects typically have the following properties and methods:
+
+- `length` - (number) The number of entries in the history stack
+
+- `action` - (string) The current action (`PUSH`, `REPLACE`, or `POP`)
+
+- ```
+  location
+  ```
+
+   
+
+  \- (object) The current location. May have the following properties:
+
+  - `pathname` - (string) The path of the URL
+  - `search` - (string) The URL query string
+  - `hash` - (string) The URL hash fragment
+  - `state` - (object) location-specific state that was provided to e.g. `push(path, state)` when this location was pushed onto the stack. Only available in browser and memory history.
+
+- `push(path, [state])` - (function) Pushes a new entry onto the history stack
+
+- `replace(path, [state])` - (function) Replaces the current entry on the history stack
+
+- `go(n)` - (function) Moves the pointer in the history stack by `n`entries
+
+- `goBack()` - (function) Equivalent to `go(-1)`
+
+- `goForward()` - (function) Equivalent to `go(1)`
+
+- `block(prompt)` - (function) Prevents navigation (see [the history docs](https://github.com/ReactTraining/history/blob/master/docs/blocking-transitions.md))[history](https://reactrouter.com/web/api/history)
+
 ## useLocation
 
 The `useLocation` hook returns the [`location`](https://reactrouter.com/web/api/location) object that represents the current URL. You can think about it like a `useState` that returns a new `location` whenever the URL changes.
@@ -206,6 +239,24 @@ ReactDOM.render(
   node
 );
 ```
+
+### location object
+
+Locations represent where the app is now, where you want it to go, or even where it was. It looks like this:
+
+```js
+{
+  key: 'ac3df4', // not with HashHistory!
+  pathname: '/somewhere',
+  search: '?some=search-string',
+  hash: '#howdy',
+  state: {
+    [userDefined]: true
+  }
+}
+```
+
+
 
 ## useParams
 
