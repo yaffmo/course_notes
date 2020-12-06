@@ -136,7 +136,7 @@ clone版本庫的時候，所使用的遠程主機自動被Git命名為`origin`�
 > $ git fetch origin master
 > ```
 
-所取回的更新，在本地主機上要用"遠程主機名/分支名"的形式讀取。比如`origin`主機的`master`，就要用`origin/master`讀取。
+所取回的更新commit，在本地主機上要用"遠程主機名/分支名"的形式讀取。比如`origin`主機的`master`，就要用`origin/master`讀取。
 
 `git branch`命令的`-r`選項，可以用來查看遠程分支，`-a`選項查看所有分支。
 
