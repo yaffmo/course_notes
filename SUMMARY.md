@@ -5,5 +5,6 @@
 - [Redux Toolkit](Redux Toolkit.md)
 - [Git](Git.md)
 * [styled](styled/README.md)
-	- [Styled Components](Styled Components.md)
-	- [Styled System](Styled System.md)
+	- [Styled Components](styled/Styled Components.md)
+	- [Styled System](styled/Styled System.md)
+
