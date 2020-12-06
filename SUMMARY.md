@@ -5,6 +5,7 @@
 - [Router Form Hook](Router Form Hook.md)
 - [Redux Toolkit](Redux Toolkit.md)
 - [Git](Git.md)
+- [Windows Terminal](Windows Terminal.md)
 
 * [Styled](styled/README.md)
   - [Styled Components](styled/Styled Components.md)
