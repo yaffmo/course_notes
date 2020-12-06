@@ -224,7 +224,7 @@ CSS Modules 所產生的 hash 的 class 層級和原本一樣多，所以 render
 
 利用 Styled Component 建立一個元件，樣式就寫在裡面。
 
-```
+```scss
 import styled from 'styled-components';
 
 const Button = styled.button`
@@ -282,7 +282,7 @@ But！最重要的就是這個 But！
 
 如下，color 與 background 的值是 props 傳入的，我們會在 styled component 取出單獨的值來一個個做設定。
 
-```
+```scss
 const Box = styled.div`
   margin: 15px 0;
   padding: 15px;
@@ -294,7 +294,7 @@ const Box = styled.div`
 
 這樣很麻煩，所以自行實作一個函式 getStyles 來做這件事。
 
-```
+```scss
 const getStyles = ({ color, bg }) => ({
   color,
   background: bg,
@@ -310,7 +310,7 @@ const Box = styled.div`
 
 Styled System 提供 [color](https://styled-system.com/api#color) 這個 utility function，可達到相同的功能，可以想像 color 這個 utility function 挖了一個更大的洞一起填入 color 和 background 並幫我們做了一些繁瑣的 mapping 工作，對開發來說就便利許多。
 
-```
+```scss
 import { color } from 'styled-system';
 
 const Box = styled.div`
@@ -335,7 +335,7 @@ Styled System 針不同特性的樣式而也有許多的 utility function 可用
 
 以下是先準備好的 theme 物件，定義了背景色 bg 和字體的顏色 color。
 
-```
+```scss
 const theme = {
   color: {
     white: '#fefefe',
@@ -348,7 +348,7 @@ const theme = {
 
 當元件設定的值 color 或 bg 可在 theme 物件找到時，就會自動 mapping 並使用，達到定義全域主題樣式的目的，不用每個元件單獨設定，易於維持全站樣式的一致性。
 
-```
+```jsx
 <ThemeProvider theme={theme}>
   <Box color='white' bg='tomato' />
 </ThemeProvider>
@@ -360,7 +360,7 @@ const theme = {
 
 可在主題物件內定義元件個別的樣式，只要在 variant 指定查找的 key 即可。
 
-```
+```scss
 <button variant="danger" size="large" />
 const buttonStyle = variant({ key: 'buttons' });
 const buttonSizeStyle = variant({ prop: 'size', key: 'buttons.size' });
@@ -390,7 +390,7 @@ const theme = {
 
 如下，我們為元件 Box 定義了兩種類別 primary 和 secondary。
 
-```
+```jsx
 import { variant } from 'styled-system';
 
 const Box = styled('div')(
@@ -425,13 +425,13 @@ Styled System 可用陣列傳入針對個別 breakpoint 所需要設定的值，
 
 一般傳統的寫法，針對每個 breakpoint 寫各自的樣式。
 
-```
+```scss
 .thing {
   font-size: 16px;
   width: 100%;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 40em) {		
   font-size: 20px;
   width: 50%;
 }
@@ -465,7 +465,7 @@ Styled System 可用陣列傳入針對個別 breakpoint 所需要設定的值，
 
 如下，第一條的分數是 101 分，第二條是 styled component 產出的樣式，會用單一層 hash class name 來包裝，得到 10 分，第一條壓過第二條。
 
-```
+```scss
 /* in site.css, score: 100 + 1 = 101 */
 #root div {
   color: red;
@@ -479,7 +479,7 @@ Styled System 可用陣列傳入針對個別 breakpoint 所需要設定的值，
 
 解法只能用 `!important` 來處理，得到一萬分！
 
-```
+```scss
 /* in site.css, score: 100 + 1 = 101 */
 #root div {
   color: red;
