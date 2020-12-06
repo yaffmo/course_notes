@@ -119,25 +119,25 @@ SSH協議還有另一種寫法。
 `git remote show`命令加上主機名，可以查看該主機的詳細信息。
 
 > ```javascript
-> $ git remote show <主机名>
+> $ git remote show <主機名>
 > ```
 
 `git remote add`命令用於添加遠程主機。
 
 > ```javascript
-> $ git remote add <主机名> <网址>
+> $ git remote add <主機名> <网址>
 > ```
 
 `git remote rm`命令用於刪除遠程主機。
 
 > ```javascript
-> $ git remote rm <主机名>
+> $ git remote rm <主機名>
 > ```
 
 `git remote rename`命令用於遠程主機的改名。
 
 > ```javascript
-> $ git remote rename <原主机名> <新主机名>
+> $ git remote rename <原主機名> <新主機名>
 > ```
 
 ## 三、git fetch
@@ -145,7 +145,7 @@ SSH協議還有另一種寫法。
 一旦遠程主機的版本庫有了更新（Git術語叫做commit），需要將這些更新取回本地，這時就要用到`git fetch`命令。
 
 > ```javascript
-> $ git fetch <遠程主机名>
+> $ git fetch <遠程主機名>
 > ```
 
 上面命令將某個遠程主機的更新，全部取回本地。
@@ -155,7 +155,7 @@ SSH協議還有另一種寫法。
 默認情況下，`git fetch`取回所有分支（branch）的更新。如果只想取回特定分支的更新，可以指定分支名。
 
 > ```javascript
-> $ git fetch <遠程主机名> <分支名>
+> $ git fetch <遠程主機名> <分支名>
 > ```
 
 比如，取回`origin`主機的`master`分支。
@@ -223,7 +223,7 @@ SSH協議還有另一種寫法。
 `git pull`命令的作用是，取回遠程主機某個分支的更新，再與本地的指定分支合併。它的完整格式稍稍有點複雜。
 
 > ```javascript
-> $ git pull <遠程主机名> <遠程分支名>:<本地分支名>
+> $ git pull <遠程主機名> <遠程分支名>:<本地分支名>
 > ```
 
 比如，取回`origin`主機的`next`分支，與本地的`master`分支合併，需要寫成下面這樣。
@@ -277,7 +277,7 @@ Git也允許手動建立追踪關係。
 如果合併需要採用rebase模式，可以使用`--rebase`選項。
 
 > ```javascript
-> $ git pull --rebase <遠程主机名> <遠程分支名>:<本地分支名>
+> $ git pull --rebase <遠程主機名> <遠程分支名>:<本地分支名>
 > ```
 
 如果遠程主機刪除了某個分支，默認情況下，`git pull`不會在拉取遠程分支的時候，刪除對應的本地分支。這是為了防止，由於其他人操作了遠程主機，導致`git pull`不知不覺刪除了本地分支。
@@ -305,7 +305,7 @@ Git也允許手動建立追踪關係。
 `git push`命令用於將本地分支的更新，推送到遠程主機。它的格式與`git pull`命令相仿。
 
 > ```javascript
-> $ git push <遠程主机名> <本地分支名>:<遠程分支名>
+> $ git push <遠程主機名> <本地分支名>:<遠程分支名>
 > ```
 
 注意，分支推送順序的寫法是<來源地>:<目的地>，所以`git pull`是<遠程分支>:<本地分支>，而`git push`是<本地分支>:<遠程分支>。
