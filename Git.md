@@ -18,7 +18,7 @@ Git有很多優勢，其中之一就是遠程操作非常簡便。本文詳細�
 > $ git clone <版本庫的網址>
 > ```
 
-比如，clonejQuery的repo。
+比如，複製jQuery的repo。
 
 > ```javascript
 > $ git clone https://github.com/jquery/jquery.git
